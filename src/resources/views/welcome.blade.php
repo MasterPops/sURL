@@ -107,7 +107,7 @@
                             @if ($res == 1)
                             Новая ссылка добавлена!<br>
                             <div class="form-group">
-                              <input class="form-control" type="text" id="copyText" value='http://<?php echo url('/');?>/{{$ssurl}}'><br>
+                              <input class="form-control" type="text" id="copyText" value='<?php echo url('/');?>/{{$ssurl}}'><br>
                               <center><button type="button" onclick="copyText()" class="btn btn-primary">Копировать ссылку</button><center>
                                 <script type="text/javascript">
                                 function copyText()
