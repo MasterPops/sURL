@@ -26,11 +26,6 @@ class UrlController extends Controller
 *   ),
 *   @SWG\Response
 *   (
-*     response=302,
-*     description="Redirect",
-*   ),
-*   @SWG\Response
-*   (
 *     response=404,
 *     description="Url not found",
 *   ),
@@ -83,6 +78,11 @@ class UrlController extends Controller
   *     response=200,
   *     description="successful operation",
   *   ),
+  *   @SWG\Response
+  *   (
+  *     response=400
+  *     description="Bad Request",
+  *   ),
   * ),
   *
   * )
@@ -95,7 +95,7 @@ class UrlController extends Controller
       if (empty($url))
       {
         $log->Action = "The user tried to create an empty link";
-        $log->status = 406;
+        $log->status = 400
         $log->save();
         return view('welcome')->with('count', \App\urls::count())->with('res',2);
       }
